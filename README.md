@@ -6,5 +6,7 @@ Our first game produced in an at-home game jam. Our first time programming in Un
 Gitignore for Unity:  
 https://github.com/github/gitignore
 
-Basic movement using the arrow keys:  
-http://gigi.nullneuron.net/gigilabs/unity3d-moving-an-object-with-keyboard-input/
+How to move using keys:  
+https://noobtuts.com/unity/2d-pong-game
+
+
