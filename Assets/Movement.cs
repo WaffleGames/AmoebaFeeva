@@ -1,41 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//code edited from https://noobtuts.com/unity/2d-pong-game
 public class Movement : MonoBehaviour {
+	public float playerSpeed = 30; 
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		// snippet found from http://gigi.nullneuron.net/gigilabs/unity3d-moving-an-object-with-keyboard-input/
-		if (Input.GetKeyDown(KeyCode.LeftArrow))
-		{
-			Vector3 position = this.transform.position;
-			position.x--;
-			this.transform.position = position;
-		}
-		if (Input.GetKeyDown(KeyCode.RightArrow))
-		{
-			Vector3 position = this.transform.position;
-			position.x++;
-			this.transform.position = position;
-		}
-		if (Input.GetKeyDown(KeyCode.UpArrow))
-		{
-			Vector3 position = this.transform.position;
-			position.y++;
-			this.transform.position = position;
-		}
-		if (Input.GetKeyDown(KeyCode.DownArrow))
-		{
-			Vector3 position = this.transform.position;
-			position.y--;
-			this.transform.position = position;
-		}
-		
+	void FixedUpdate () {
+		float v = Input.GetAxisRaw("Vertical");
+		float h = Input.GetAxisRaw("Horizontal");
+
+		GetComponent<Rigidbody2D>().velocity = new Vector2(h, v) * playerSpeed;
 	}
 }
