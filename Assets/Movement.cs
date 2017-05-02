@@ -37,7 +37,7 @@ public class Movement : MonoBehaviour {
 		screenPos = Camera.main.WorldToScreenPoint(transform.position);
 		amPosX = screenPos.x;
 		amPosY = screenPos.y;
-		print (screenPos);
+		//print (screenPos);
 		//when the amoeba exits boundary, comes back through opposite side
 		//left side
 		if (amPosX < 0){ //too far on the left, so appear on the right
