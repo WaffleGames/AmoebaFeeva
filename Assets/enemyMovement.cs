@@ -6,15 +6,20 @@ public class enemyMovement : MonoBehaviour {
 
 	float speed;
 	public int direction;
+	public Vector2 scale;
 
 	// Use this for initialization
 	void Start () {
 		speed = 3f;
-
+		float random_scale = Random.Range (1f, 20f);
+		scale.x = random_scale;
+		scale.y = random_scale;
+		transform.localScale = scale;
 	}
 	
 	// Update is called once per frame
 	void Update () {
+
 		//code by Pixelelement Games on youtube
 		Vector2 position = transform.position;
 		if (direction == 0) {

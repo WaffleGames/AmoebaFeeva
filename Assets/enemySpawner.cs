@@ -38,6 +38,7 @@ public class enemySpawner : MonoBehaviour {
 
 		GameObject anEnemy = (GameObject)Instantiate (enemy_blob);
 		anEnemy.GetComponent<enemyMovement> ().direction = spawnDirection;
+
 		if (spawnDirection == 0) {
 			//goes down
 			anEnemy.transform.position = new Vector2 (Random.Range (min.x, max.x), max.y);
