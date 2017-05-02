@@ -1,10 +1,11 @@
 fileFormatVersion: 2
 guid: 1ab64f0f08e76c2429db7d037bcd7dae
-timeCreated: 1493679475
+timeCreated: 1493693267
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - arcanine: {fileID: 1958989947296244, guid: 14d3e58da8944a34b8893dd9860f1709, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

@@ -17,7 +17,7 @@ public class Movement : MonoBehaviour {
 		float v = Input.GetAxisRaw("Vertical");
 		float h = Input.GetAxisRaw("Horizontal");
 		curVelocity = GetComponent<Rigidbody2D> ().velocity;
-		print (curVelocity);
+//		print (curVelocity);
 		if (h > 0) { 
 			mySpriteRenderer.flipX = true;
 		}else {
