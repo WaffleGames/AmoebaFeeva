@@ -11,7 +11,8 @@ public class enemyMovement : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		speed = 3f;
-		float random_scale = Random.Range (1f, 20f);
+		float random_scale = Random.Range (1f, 6f);
+		random_scale = Mathf.Round (random_scale);
 		scale.x = random_scale;
 		scale.y = random_scale;
 		transform.localScale = scale;
@@ -39,8 +40,21 @@ public class enemyMovement : MonoBehaviour {
 
 		//for destroying the enemy
 		Vector2 min = Camera.main.ViewportToWorldPoint (new Vector2 (0, 0) );
+		Vector2 max = Camera.main.ViewportToWorldPoint (new Vector2 (1, 1) );
 
-		if (transform.position.y < min.y) {
+		if (transform.position.y < min.y && direction ==0) {
+			Destroy (gameObject);
+		}
+
+		if (transform.position.y > max.y && direction ==1) {
+			Destroy (gameObject);
+		}
+
+		if (transform.position.x < min.x && direction ==2) {
+			Destroy (gameObject);
+		}
+
+		if (transform.position.x > max.x && direction ==3) {
 			Destroy (gameObject);
 		}
 

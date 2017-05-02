@@ -680,7 +680,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1574782545
+  m_SortingLayerID: -1843200635
   m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 60ab4eeafc4f54c4495ed1536cd0e0de, type: 3}
@@ -732,6 +732,9 @@ MonoBehaviour:
   playerSpeed: 10
   playerFriction: 0.5
   curVelocity: {x: 0, y: 0}
+  screenPos: {x: 0, y: 0, z: 0}
+  amPosX: 0
+  amPosY: 0
 --- !u!1 &511854661
 GameObject:
   m_ObjectHideFlags: 0
@@ -1322,6 +1325,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy_blob: {fileID: 1958989947296244, guid: 14d3e58da8944a34b8893dd9860f1709, type: 2}
+  spawnDirection: 1
 --- !u!4 &1590372784
 Transform:
   m_ObjectHideFlags: 0
