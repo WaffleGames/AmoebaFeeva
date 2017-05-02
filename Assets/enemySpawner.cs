@@ -39,10 +39,17 @@ public class enemySpawner : MonoBehaviour {
 		GameObject anEnemy = (GameObject)Instantiate (enemy_blob);
 		anEnemy.GetComponent<enemyMovement> ().direction = spawnDirection;
 		if (spawnDirection == 0) {
+			//goes down
 			anEnemy.transform.position = new Vector2 (Random.Range (min.x, max.x), max.y);
 		} else if (spawnDirection == 1) {
-			anEnemy.transform.position = new Vector2 (Random.Range (min.x, max.x), min.y );
-
+			//goes up
+			anEnemy.transform.position = new Vector2 (Random.Range (min.x, max.x), min.y);
+		} else if (spawnDirection == 2) {
+			//goes left
+			anEnemy.transform.position = new Vector2 (max.x, Random.Range (min.y, max.y));
+		} else {
+			//goes right
+			anEnemy.transform.position = new Vector2 (min.x, Random.Range (min.y, max.y));
 		}
 		ScheduleNextEnemySpawn ();
 	
@@ -64,7 +71,7 @@ public class enemySpawner : MonoBehaviour {
 
 	void varyTheSpawnRate(){
 		maxSpawnRateInSeconds = Random.Range (1f, 10f);
-		spawnDirection = Random.Range (0, 2); //chnage back to 3f
+		spawnDirection = Random.Range (0, 4);
 	}
 
 

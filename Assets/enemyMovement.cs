@@ -17,12 +17,18 @@ public class enemyMovement : MonoBehaviour {
 	void Update () {
 		//code by Pixelelement Games on youtube
 		Vector2 position = transform.position;
-		if(direction == 0){
+		if (direction == 0) {
 			//goes down
 			position = new Vector2 (position.x, position.y - speed * Time.deltaTime);
-		}else if(direction ==1){
+		} else if (direction == 1) {
 			//goes up
 			position = new Vector2 (position.x, position.y + speed * Time.deltaTime);
+		} else if (direction == 2) {
+			//goes left
+			position = new Vector2 (position.x - speed * Time.deltaTime, position.y);
+		} else {
+			//goes right
+			position = new Vector2 (position.x + speed * Time.deltaTime, position.y);
 		}
 		transform.position = position;
 
