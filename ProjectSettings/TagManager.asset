@@ -41,6 +41,3 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: AmoebaL
-    uniqueID: 1574782545
-    locked: 0
