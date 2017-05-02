@@ -13,7 +13,7 @@ TagManager:
   - UI
   - 
   - 
-  - amoebaNFriends
+  - 
   - 
   - 
   - 
@@ -41,6 +41,6 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: meeba
-    uniqueID: 1701690495
+  - name: AmoebaL
+    uniqueID: 1574782545
     locked: 0
