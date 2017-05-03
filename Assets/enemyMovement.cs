@@ -10,12 +10,17 @@ public class enemyMovement : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		speed = 3f;
+		
 		float random_scale = Random.Range (1f, 6f);
 		random_scale = Mathf.Round (random_scale);
 		scale.x = random_scale;
 		scale.y = random_scale;
 		transform.localScale = scale;
+
+		float random_speed = Random.Range (1f, 5f);
+		random_speed = Mathf.Round (random_speed);
+
+		speed = random_speed;
 	}
 	
 	// Update is called once per frame
@@ -59,4 +64,6 @@ public class enemyMovement : MonoBehaviour {
 		}
 
 	}
+
+
 }
