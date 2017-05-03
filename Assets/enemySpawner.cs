@@ -8,8 +8,9 @@ public class enemySpawner : MonoBehaviour {
 
 	float maxSpawnRateInSeconds = 5f;
 
-	//0 = up
-	//1 = down
+	//heading:
+	//0 = down
+	//1 = up
 	//2 = left
 	//3 = right
 	public int spawnDirection = 0;
@@ -38,6 +39,22 @@ public class enemySpawner : MonoBehaviour {
 
 		GameObject anEnemy = (GameObject)Instantiate (enemy_blob);
 		anEnemy.GetComponent<enemyMovement> ().direction = spawnDirection;
+
+		int colouring = Random.Range (0, 3);
+		SpriteRenderer renderer = anEnemy.GetComponent<SpriteRenderer> ();
+
+		if (colouring == 0) {
+			//it's red
+			renderer.material.SetColor("_Color", Color.red);
+		} else if (colouring == 1) {
+			//it's black
+			renderer.material.SetColor("_Color", Color.black);
+		} else {
+			//it's blue
+			renderer.material.SetColor("_Color", Color.blue);
+		}
+
+
 		if (spawnDirection == 0) {
 			//goes down
 			anEnemy.transform.position = new Vector2 (Random.Range (min.x, max.x), max.y);
