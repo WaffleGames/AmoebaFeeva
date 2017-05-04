@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212274335279711532}
   - component: {fileID: 114565440104562922}
   - component: {fileID: 60356629207811708}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: arcanine
   m_TagString: bacteria
   m_Icon: {fileID: 0}
@@ -132,7 +132,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1843200635
+  m_SortingLayerID: -2144796911
   m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: d3b830e5149098a4ea74165eb0f90da9, type: 3}

@@ -86,7 +86,7 @@ public class enemySpawner : MonoBehaviour {
 
 
 	void varyTheSpawnRate(){
-		maxSpawnRateInSeconds = Random.Range (1f, 10f);
+		maxSpawnRateInSeconds = Random.Range (1f, 5f);
 		spawnDirection = Random.Range (0, 4);
 	}
 

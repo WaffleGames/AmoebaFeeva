@@ -77,34 +77,36 @@ public class Movement : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D col){
 		
 		if (col.gameObject.tag == "bacteria") {
-			print ("Collided with bacteria!");
+			//print ("Collided with bacteria!");
 
 			//get the size
 			//if safe to eat, continue. If not, DIE.
 			enemyMovement bacteria = (enemyMovement)col.gameObject.GetComponent<enemyMovement>();
 
+			//print ("bacteria scale: " + bacteria.scale.x + " player scale " + playerScale.x); 
+
 			if(bacteria.scale.x <= playerScale.x){
-				print("Safe to eat!");
+				//print("Safe to eat!");
 
 				//get color
 				SpriteRenderer renderer = bacteria.GetComponent<SpriteRenderer> ();
-				print(renderer.color);
+				//print(renderer.color);
 
 			}else{
 				SpriteRenderer renderer = bacteria.GetComponent<SpriteRenderer> ();
 				//TEMPORARY. MOVE UP LATER
 				if (renderer.material.GetColor ("_Color") == Color.red) {
 					//up red point bar
-					print("Red");
+					//print("Red");
 				}else if(renderer.material.GetColor ("_Color") == Color.black){
 					//up black point bar
-					print("Black");
+					//print("Black");
 				}else if(renderer.material.GetColor ("_Color") == Color.blue){
 					//up blue point bar
-					print ("Blue");
+					//print ("Blue");
 				}
 				
-				print("YOU DIED!");
+				//print("YOU DIED!");
 			}
 				
 		}
