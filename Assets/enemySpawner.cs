@@ -34,8 +34,7 @@ public class enemySpawner : MonoBehaviour {
 
 		//top right corner of the screen
 		Vector2 max = Camera.main.ViewportToWorldPoint (new Vector2 (1, 1));	
-
-		print ("This is spawn direction: " + spawnDirection);
+	
 
 		GameObject anEnemy = (GameObject)Instantiate (enemy_blob);
 		anEnemy.GetComponent<enemyMovement> ().direction = spawnDirection;
@@ -87,7 +86,7 @@ public class enemySpawner : MonoBehaviour {
 
 
 	void varyTheSpawnRate(){
-		maxSpawnRateInSeconds = Random.Range (1f, 10f);
+		maxSpawnRateInSeconds = Random.Range (1f, 5f);
 		spawnDirection = Random.Range (0, 4);
 	}
 
