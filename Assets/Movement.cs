@@ -35,13 +35,18 @@ public class Movement : MonoBehaviour {
 
 		if (v != 0 && h != 0) { //if both are pressed at once
 			if ((v > 0 && h > 0) || (v > 0 && h < 0)) { //up and right or up and left, show up animation
+				print("up");
 				GetComponent<Animator> ().SetFloat ("Diry", v);
+				GetComponent<Animator> ().SetFloat ("Dirx", 0);
 			} else if ((v < 0 && h > 0) || (v < 0 && h < 0)) { //down and right or down and left, show down animation
+				print("down");
 				GetComponent<Animator> ().SetFloat ("Diry", v);
+				GetComponent<Animator> ().SetFloat ("Dirx", 0);
 			}
 
 
 		} else {
+			print ("else");
 			GetComponent<Animator> ().SetFloat ("Diry", v);
 			GetComponent<Animator> ().SetFloat ("Dirx", h);
 		}
