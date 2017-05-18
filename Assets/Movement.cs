@@ -33,22 +33,18 @@ public class Movement : MonoBehaviour {
 		float v = Input.GetAxisRaw("Vertical");
 		float h = Input.GetAxisRaw("Horizontal");
 
-
-		if (h > 0) { 
-			mySpriteRenderer.flipX = true;
-		}else {
-			if(h < 0){
-				mySpriteRenderer.flipX = false;
+		if (v != 0 && h != 0) { //if both are pressed at once
+			if ((v > 0 && h > 0) || (v > 0 && h < 0)) { //up and right or up and left, show up animation
+				GetComponent<Animator> ().SetFloat ("Diry", v);
+			} else if ((v < 0 && h > 0) || (v < 0 && h < 0)) { //down and right or down and left, show down animation
+				GetComponent<Animator> ().SetFloat ("Diry", v);
 			}
-		}
-		if (v > 0) { 
-			mySpriteRenderer.flipY = false;
-		}else {
-			if(v < 0){
-				mySpriteRenderer.flipY = true;
-			}
-		}
 
+
+		} else {
+			GetComponent<Animator> ().SetFloat ("Diry", v);
+			GetComponent<Animator> ().SetFloat ("Dirx", h);
+		}
 
 
 		//GetComponent<Rigidbody2D>().AddForce(gameObject.transform.up * playerSpeed * v);
