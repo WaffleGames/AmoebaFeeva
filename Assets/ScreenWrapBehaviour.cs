@@ -14,8 +14,8 @@ public class ScreenWrapBehaviour : MonoBehaviour{
 
 	Renderer[] renderers;
 
-	bool isWrappingX = false;
-	bool isWrappingY = false;
+	//bool isWrappingX = false;
+	//bool isWrappingY = false;
 
 	// We use ghosts in advanced wrapping to create a nice wrapping illusion
 	Transform[] extraMeebs = new Transform[8];

@@ -10,13 +10,11 @@ public class Movement : MonoBehaviour {
 	public Vector3 screenPos;
 	public float amPosX;
 	public float amPosY;
-	private float xBound = Screen.width - 15;
-	private float yBound = Screen.height - 15;
 	public Vector2 playerScale;
 	public float roundedVelX;
 	public float roundedVelY;
 
-
+	public gunController guncontroller;
 
 
 
@@ -29,24 +27,34 @@ public class Movement : MonoBehaviour {
 		transform.localScale = playerScale;
 	}
 		
+	void Update () {
+		if(Input.GetKeyDown("space")){
+			guncontroller.isFiring = true;
+		}
+		if(!Input.GetKeyDown("space")){
+			guncontroller.isFiring = false;
+		}
+
+	}
+
 	void FixedUpdate () {
 		float v = Input.GetAxisRaw("Vertical");
 		float h = Input.GetAxisRaw("Horizontal");
 
 		if (v != 0 && h != 0) { //if both are pressed at once
 			if ((v > 0 && h > 0) || (v > 0 && h < 0)) { //up and right or up and left, show up animation
-				print("up");
+				
 				GetComponent<Animator> ().SetFloat ("Diry", v);
 				GetComponent<Animator> ().SetFloat ("Dirx", 0);
 			} else if ((v < 0 && h > 0) || (v < 0 && h < 0)) { //down and right or down and left, show down animation
-				print("down");
+				
 				GetComponent<Animator> ().SetFloat ("Diry", v);
 				GetComponent<Animator> ().SetFloat ("Dirx", 0);
 			}
 
 
 		} else {
-			print ("else");
+			
 			GetComponent<Animator> ().SetFloat ("Diry", v);
 			GetComponent<Animator> ().SetFloat ("Dirx", h);
 		}
